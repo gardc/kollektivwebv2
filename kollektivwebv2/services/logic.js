@@ -14,7 +14,7 @@ export const getWeek = () => {
 };
 
 export const getPostPerson = (offset, maxPeople, people) => {
-    const currweek = 1;
+    const currweek = getWeek();
     const person = (currweek + offset - 1) % maxPeople;
     return people[person];
 }
