@@ -5,10 +5,23 @@ import {
   liteBadPeople,
   StortBadPeople,
 } from "../services/logic";
+import Head from "next/head";
 
 export default function Home() {
   return (
     <div className="w-full">
+      <Head>
+        <title>KollektivWeb</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#3B82F6" />
+
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-status-bar" content="#3B82F6" />
+      </Head>
+
       {/* Nav */}
       <div className="bg-blue-500 text-white flex justify-center">
         <div className="container mx-auto flex items-center py-3 px-2">
