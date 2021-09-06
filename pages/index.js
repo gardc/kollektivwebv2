@@ -1,7 +1,6 @@
 import {
   allPeople,
   getPostPerson,
-  getWeek,
   liteBadPeople,
   StortBadPeople,
 } from "../services/logic";
@@ -34,35 +33,35 @@ export default function Home() {
 
       {/* Content */}
       <div className="w-full flex justify-center">
-        <div className="container grid grid-cols-2 md:grid-cols-3 sm:grid-cols-3 mt-4 ">
-          <PostCard>
-            <p className="text-4xl">👨</p>
-            <h2 className="mt-2 text-l">
-              Lite bad: <b>{getPostPerson(0, 2, liteBadPeople)}</b>
-            </h2>
-          </PostCard>
-          <PostCard>
-            <p className="text-4xl">👩</p>
-            <h2 className="mt-2 text-l">
-              Stort bad: <b>{getPostPerson(0, 3, StortBadPeople)}</b>
-            </h2>
-          </PostCard>
-          <PostCard>
+        <div className="container grid grid-cols-6 mt-4 ">
+          <PostCard className="col-span-3 sm:col-span-2">
             <p className="text-4xl">🍽️</p>
             <h2 className="mt-2 text-l">
               Kjøkken: <b>{getPostPerson(2, 5, allPeople)}</b>
             </h2>
           </PostCard>
-          <PostCard>
+          <PostCard className="col-span-3 sm:col-span-2">
             <p className="text-4xl">🗑️</p>
             <h2 className="mt-2 text-l">
               Søppel: <b>{getPostPerson(4, 5, allPeople)}</b>
             </h2>
           </PostCard>
-          <PostCard>
+          <PostCard className="col-span-3 sm:col-span-2">
             <p className="text-4xl">🪣</p>
             <h2 className="mt-2 text-l">
               Gulv og stue: <b>{getPostPerson(3, 5, allPeople)}</b>
+            </h2>
+          </PostCard>
+          <PostCard className="col-span-3">
+            <p className="text-4xl">👨</p>
+            <h2 className="mt-2 text-l">
+              Lite bad: <b>{getPostPerson(0, 2, liteBadPeople)}</b>
+            </h2>
+          </PostCard>
+          <PostCard className="col-span-6 sm:col-span-3">
+            <p className="text-4xl">👩</p>
+            <h2 className="mt-2 text-l">
+              Stort bad: <b>{getPostPerson(0, 3, StortBadPeople)}</b>
             </h2>
           </PostCard>
         </div>
@@ -73,7 +72,7 @@ export default function Home() {
 
 const PostCard = (props) => {
   return (
-    <div className="rounded-md shadow-md px-5 py-3 flex flex-col justify-center items-center mx-2 my-2">
+    <div className={`rounded-md shadow-md px-5 py-3 flex flex-col justify-center items-center mx-2 my-2 ${props.className}`}>
       {props.children}
     </div>
   );
